@@ -34,7 +34,8 @@ class DataAnalysis:
                     else:
                         v = 'download_file.xls'
 
-                    download.download(num,v)
+                    download.download(num, v)
+                    break
 
 
         # print(li)

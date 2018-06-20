@@ -20,8 +20,19 @@ down成功之后，就从xlsx中解析出 每个盘口当前的盘口、凯利�
 打开查看的时候，从数据库取出每场已有数据的比赛，然后绘制线路变化趋势
 
 数据结构
-{bean,bean,bean}
+{
+    date,date,date
+}
+date:{
+    name:赌场名,
+    datas:{
+        bean，
+        bean,
+        bean
+        }
+     }
 bean{
+    date:时间戳
     name:博彩公司，
     first_main:0.85,
     first_pan:0.5,
@@ -31,4 +42,14 @@ bean{
     new_ke:1.04,
     kai_main:0.9,
     kai_ke:0.97,
-    pei_fu:93.54}
+    pei_fu:93.54
+    }
+
+读取出来的数据 都以比赛id 为准 写入到一个xml中 xml的大致规则如下
+xml的文件名是 比赛id
+item的name是
+<resources>
+    <string name="app_name">VideoEditor</string>
+    <string name="video">视频</string>
+    <string name="record">录制</string>
+</resources>
