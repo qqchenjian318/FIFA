@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 
 from FileDownload import FileDownload
+from bs4 import BeautifulSoup
 
 
 class DataAnalysis:
@@ -15,8 +16,25 @@ class DataAnalysis:
             if num is not None:
                 if num is not None and num.startswith('148'):
                     print('%s  状态  %s' % (num, node.get('mtime')))
+
+                    # print(node)
+                    n = node.find_all('span')
+                    li = []
+                    for i in n:
+                        a = i.find_all('a')
+                        if len(a) > 0:
+                            if '世界杯' != a[0].text:
+                                print (a[0].text)
+                                li.append(a[0].text)
+
                     download = FileDownload()
-                    download.download(num,'download_file')
-                    break
+                    v = ''
+                    if len(li) > 1:
+                        v = li[0] +'_vs_'+li[1]+'.xls'
+                    else:
+                        v = 'download_file.xls'
+
+                    download.download(num,v)
+
 
         # print(li)
