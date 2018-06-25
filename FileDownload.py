@@ -12,7 +12,7 @@ window_path = 'C:/Users/qqche_000/PycharmProjects/download'
 
 
 class FileDownload:
-    def download(self, url, fileName):
+    def download(self, url, fileName, time):
         print(platform.platform())
         if platform.platform().startswith('Window'):
             file = window_path
@@ -28,5 +28,5 @@ class FileDownload:
         # dicts = reader.get_dict(0, 0, 1)
         di = reader.get_dict(0)
         print(di)
-        writer = WriteDataToJson('123456')
+        writer = WriteDataToJson(time, url)
         writer.write_to_json(di)

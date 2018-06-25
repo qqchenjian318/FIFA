@@ -1,6 +1,8 @@
 import urllib
 import urllib.request
 
+import time
+
 from DataAnalysis import DataAnalysis
 
 
@@ -10,5 +12,6 @@ class DataCenter:
         req = urllib.request.Request(basePath)
         data = urllib.request.urlopen(req).read()
         anal = DataAnalysis()
-        anal.analysis_html(data)
+        int(time.time())
+        anal.analysis_html(data,int(time.time()))
 

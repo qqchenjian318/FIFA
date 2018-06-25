@@ -32,7 +32,6 @@ date:{
         }
      }
 bean{
-    date:时间戳
     name:博彩公司，
     first_main:0.85,
     first_pan:0.5,
@@ -44,12 +43,14 @@ bean{
     kai_ke:0.97,
     pei_fu:93.54
     }
+[{time:asd,[bean,bean]},{}]
 
-读取出来的数据 都以比赛id 为准 写入到一个xml中 xml的大致规则如下
-xml的文件名是 比赛id
-item的name是
-<resources>
-    <string name="app_name">VideoEditor</string>
-    <string name="video">视频</string>
-    <string name="record">录制</string>
-</resources>
+1、先爬多次数据 并且写入json文件
+2、从json文件中读取数据
+3、使用k线绘图框架 将读取的数据 绘制出来
+
+需要绘制的折线图
+初始盘口 一条直线（主 盘 客）红黄黑
+变化图 每五分钟一个变化阶段（主盘客）
+/*/
+
